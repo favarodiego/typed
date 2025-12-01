@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Child Safety Policy - TypeD Social</title>
+    <style>
+        :root {
+            --primary-color: #00ACC1;
+            --primary-dark: #00838F;
+            --danger-color: #D32F2F;
+            --text-color: #333;
+            --bg-color: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+        
+        .language-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: white;
+            border-radius: 8px;
+            padding: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+            display: flex;
+            gap: 5px;
+        }
+        
+        .lang-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            background: #f0f0f0;
+            color: #333;
+        }
+        
+        .lang-btn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .lang-btn.active {
+            background: var(--primary-dark);
+            color: white;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .card h2 {
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .card h3 {
+            color: var(--text-color);
+            margin: 20px 0 10px 0;
+        }
+        
+        .card p, .card li {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .card ul, .card ol {
+            padding-left: 25px;
+        }
+        
+        .warning-box {
+            background: #FFEBEE;
+            border-left: 4px solid var(--danger-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .warning-box h3 {
+            color: var(--danger-color);
+            margin-bottom: 10px;
+        }
+        
+        .info-box {
+            background: #E0F7FA;
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .contact-box {
+            background: #E8F5E9;
+            border: 2px solid #4CAF50;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .contact-box h3 {
+            color: #2E7D32;
+            margin-bottom: 15px;
+        }
+        
+        .contact-box a {
+            color: #1565C0;
+            font-weight: bold;
+        }
+        
+        .footer {
+            background: #263238;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+        
+        .footer a {
+            color: var(--primary-color);
+        }
+        
+        .last-update {
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+        
+        .lang-content {
+            display: none;
+        }
+        
+        .lang-content.active {
+            display: block;
+        }
+        
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+            
+            .language-selector {
+                top: 10px;
+                right: 10px;
+                padding: 5px;
+            }
+            
+            .lang-btn {
+                padding: 6px 10px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button class="lang-btn active" onclick="setLanguage('pt')">🇧🇷 PT</button>
+        <button class="lang-btn" onclick="setLanguage('en')">🇺🇸 EN</button>
+        <button class="lang-btn" onclick="setLanguage('es')">🇪🇸 ES</button>
+    </div>
+
+    <!-- ==================== PORTUGUÊS ==================== -->
+    <div id="content-pt" class="lang-content active">
+        <div class="header">
+            <h1>🛡️ Política de Segurança Infantil</h1>
+            <p>TypeD Social - Padrões de Proteção contra Abuso e Exploração Sexual Infantil</p>
+        </div>
+        
+        <div class="container">
+            <div class="card">
+                <h2>1. Compromisso com a Segurança Infantil</h2>
+                <p>
+                    O <strong>TypeD Social</strong> mantém uma política de <strong>TOLERÂNCIA ZERO</strong> 
+                    em relação a qualquer forma de abuso ou exploração sexual infantil (CSAE - Child Sexual 
+                    Abuse and Exploitation).
+                </p>
+                <p>
+                    Estamos comprometidos em criar um ambiente seguro para todos os usuários e em cooperar 
+                    ativamente com autoridades competentes para combater crimes contra crianças e adolescentes.
+                </p>
+                
+                <div class="warning-box">
+                    <h3>⚠️ Proibição Absoluta</h3>
+                    <p>É <strong>estritamente proibido</strong> no TypeD Social qualquer conteúdo que:</p>
+                    <ul>
+                        <li>Represente, promova ou glorifique abuso sexual de menores</li>
+                        <li>Contenha material de abuso sexual infantil (CSAM)</li>
+                        <li>Sexualize menores de qualquer forma</li>
+                        <li>Facilite, promova ou coordene exploração sexual de crianças</li>
+                        <li>Solicite ou compartilhe imagens íntimas de menores</li>
+                        <li>Promova o aliciamento (grooming) de menores</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>2. Medidas de Prevenção</h2>
+                <p>Implementamos as seguintes medidas para prevenir o abuso infantil em nossa plataforma:</p>
+                
+                <h3>2.1 Moderação de Conteúdo</h3>
+                <ul>
+                    <li>Sistema de denúncia acessível em todas as publicações e perfis</li>
+                    <li>Revisão prioritária de denúncias relacionadas a menores</li>
+                    <li>Remoção imediata de conteúdo suspeito</li>
+                    <li>Equipe de moderação treinada para identificar CSAM</li>
+                </ul>
+                
+                <h3>2.2 Verificação e Monitoramento</h3>
+                <ul>
+                    <li>Monitoramento proativo de conteúdo compartilhado</li>
+                    <li>Detecção de padrões suspeitos de comportamento</li>
+                    <li>Análise de denúncias dentro de 24 horas</li>
+                </ul>
+                
+                <h3>2.3 Bloqueio e Banimento</h3>
+                <ul>
+                    <li>Suspensão imediata de contas que violem esta política</li>
+                    <li>Banimento permanente sem possibilidade de recurso</li>
+                    <li>Preservação de evidências para autoridades</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h2>3. Procedimentos de Denúncia</h2>
+                
+                <h3>3.1 Como Denunciar no Aplicativo</h3>
+                <ol>
+                    <li>Toque nos três pontos (⋮) na publicação ou perfil suspeito</li>
+                    <li>Selecione "Denunciar"</li>
+                    <li>Escolha a categoria "Abuso ou Exploração Infantil"</li>
+                    <li>Forneça detalhes adicionais se possível</li>
+                    <li>Envie a denúncia</li>
+                </ol>
+                
+                <h3>3.2 Denúncia Direta</h3>
+                <p>Para denúncias urgentes ou detalhadas, entre em contato diretamente:</p>
+                
+                <div class="contact-box">
+                    <h3>📧 Canal de Denúncia</h3>
+                    <p><strong>E-mail:</strong> <a href="mailto:suporte@typedsocial.com">suporte@typedsocial.com</a></p>
+                    <p><strong>Assunto:</strong> [URGENTE] Denúncia de Segurança Infantil</p>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 15px;">
+                        Todas as denúncias são tratadas com total confidencialidade.
+                    </p>
+                </div>
+                
+                <h3>3.3 Denúncia às Autoridades</h3>
+                <p>Recomendamos também que denúncias sejam feitas diretamente às autoridades competentes:</p>
+                <ul>
+                    <li><strong>Brasil:</strong> Disque 100 (Direitos Humanos) ou SaferNet Brasil (new.safernet.org.br)</li>
+                    <li><strong>Internacional:</strong> NCMEC CyberTipline (missingkids.org)</li>
+                    <li><strong>Polícia:</strong> Delegacia de Crimes Cibernéticos local</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h2>4. Cooperação com Autoridades</h2>
+                <p>
+                    O TypeD Social coopera integralmente com as autoridades policiais e judiciais em 
+                    investigações relacionadas a abuso e exploração sexual infantil.
+                </p>
+                
+                <div class="info-box">
+                    <h3>Nossa Cooperação Inclui:</h3>
+                    <ul>
+                        <li>Reporte imediato de CSAM ao NCMEC (National Center for Missing & Exploited Children)</li>
+                        <li>Preservação de dados e evidências conforme exigido por lei</li>
+                        <li>Resposta prioritária a solicitações legais de autoridades</li>
+                        <li>Fornecimento de informações de conta mediante ordem judicial</li>
+                        <li>Colaboração com investigações internacionais</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>5. Consequências para Violações</h2>
+                <p>Usuários que violarem esta política estarão sujeitos às seguintes consequências:</p>
+                
+                <ol>
+                    <li><strong>Remoção Imediata:</strong> Todo conteúdo que viole esta política será removido imediatamente</li>
+                    <li><strong>Suspensão da Conta:</strong> A conta será suspensa instantaneamente</li>
+                    <li><strong>Banimento Permanente:</strong> O usuário será permanentemente banido da plataforma</li>
+                    <li><strong>Reporte às Autoridades:</strong> O incidente será reportado às autoridades competentes</li>
+                    <li><strong>Preservação de Evidências:</strong> Todas as evidências serão preservadas para investigação</li>
+                </ol>
+                
+                <div class="warning-box">
+                    <h3>⚖️ Responsabilidade Legal</h3>
+                    <p>
+                        Usuários que compartilharem material de abuso sexual infantil estão sujeitos a 
+                        <strong>processos criminais</strong> conforme as leis aplicáveis, incluindo o 
+                        Estatuto da Criança e do Adolescente (ECA) no Brasil e leis equivalentes em 
+                        outras jurisdições.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>6. Recursos e Apoio</h2>
+                <p>
+                    Se você ou alguém que conhece foi vítima de abuso ou exploração sexual, 
+                    procure ajuda imediatamente:
+                </p>
+                
+                <h3>🇧🇷 Brasil</h3>
+                <ul>
+                    <li><strong>Disque 100:</strong> Canal de denúncias de violações de direitos humanos</li>
+                    <li><strong>SaferNet Brasil:</strong> new.safernet.org.br - Denúncias e orientação</li>
+                    <li><strong>CVV:</strong> 188 - Centro de Valorização da Vida</li>
+                </ul>
+                
+                <h3>🌍 Internacional</h3>
+                <ul>
+                    <li><strong>NCMEC:</strong> missingkids.org - National Center for Missing & Exploited Children</li>
+                    <li><strong>INHOPE:</strong> inhope.org - Rede internacional de combate a CSAM</li>
+                    <li><strong>IWF:</strong> iwf.org.uk - Internet Watch Foundation</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h2>7. Contato</h2>
+                <p>Para questões relacionadas a esta política ou para reportar violações:</p>
+                
+                <div class="contact-box">
+                    <h3>📬 Ponto de Contato Designado</h3>
+                    <p><strong>E-mail:</strong> <a href="mailto:suporte@typedsocial.com">suporte@typedsocial.com</a></p>
+                    <p><strong>Website:</strong> <a href="https://www.typedsocial.com">www.typedsocial.com</a></p>
+                    <p style="margin-top: 15px;">
+                        <strong>Tempo de Resposta:</strong> Denúncias de segurança infantil são tratadas 
+                        com <strong>máxima prioridade</strong> e respondidas em até <strong>24 horas</strong>.
+                    </p>
+                </div>
+            </div>
+            
+            <p class="last-update">
+                <strong>Última atualização:</strong> Dezembro de 2024<br>
+                <strong>Versão:</strong> 1.0
+            </p>
+        </div>
+    </div>
+
+    <!-- ==================== ENGLISH ==================== -->
+    <div id="content-en" class="lang-content">
+        <div class="header">
+            <h1>🛡️ Child Safety Policy</h1>
+            <p>TypeD Social - Standards for Protection Against Child Sexual Abuse and Exploitation</p>
+        </div>
+        
+        <div class="container">
+            <div class="card">
+                <h2>1. Commitment to Child Safety</h2>
+                <p>
+                    <strong>TypeD Social</strong> maintains a <strong>ZERO TOLERANCE</strong> policy 
+                    regarding any form of child sexual abuse or exploitation (CSAE).
+                </p>
+                <p>
+                    We are committed to creating a safe environment for all users and actively cooperating 
+                    with competent authorities to combat crimes against children and adolescents.
+                </p>
+                
+                <div class="warning-box">
+                    <h3>⚠️ Absolute Prohibition</h3>
+                    <p>The following content is <strong>strictly prohibited</strong> on TypeD Social:</p>
+                    <ul>
+                        <li>Content that depicts, promotes, or glorifies child sexual abuse</li>
+                        <li>Child sexual abuse material (CSAM)</li>
+                        <li>Sexualization of minors in any form</li>
+                        <li>Content that facilitates, promotes, or coordinates sexual exploitation of children</li>
+                        <li>Solicitation or sharing of intimate images of minors</li>
+                        <li>Child grooming activities</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>2. Prevention Measures</h2>
+                <p>We implement the following measures to prevent child abuse on our platform:</p>
+                
+                <h3>2.1 Content Moderation</h3>
+                <ul>
+                    <li>Reporting system accessible on all posts and profiles</li>
+                    <li>Priority review of reports related to minors</li>
+                    <li>Immediate removal of suspicious content</li>
+                    <li>Moderation team trained to identify CSAM</li>
+                </ul>
+                
+                <h3>2.2 Verification and Monitoring</h3>
+                <ul>
+                    <li>Proactive monitoring of shared content</li>
+                    <li>Detection of suspicious behavior patterns</li>
+                    <li>Analysis of reports within 24 hours</li>
+                </ul>
+                
+                <h3>2.3 Blocking and Banning</h3>
+                <ul>
+                    <li>Immediate suspension of accounts that violate this policy</li>
+                    <li>Permanent ban without possibility of appeal</li>
+                    <li>Preservation of evidence for authorities</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h2>3. Reporting Procedures</h2>
+                
+                <h3>3.1 How to Report in the App</h3>
+                <ol>
+                    <li>Tap the three dots (⋮) on the suspicious post or profile</li>
+                    <li>Select "Report"</li>
+                    <li>Choose the category "Child Abuse or Exploitation"</li>
+                    <li>Provide additional details if possible</li>
+                    <li>Submit the report</li>
+                </ol>
+                
+                <h3>3.2 Direct Reporting</h3>
+                <p>For urgent or detailed reports, contact us directly:</p>
+                
+                <div class="contact-box">
+                    <h3>📧 Reporting Channel</h3>
+                    <p><strong>Email:</strong> <a href="mailto:suporte@typedsocial.com">suporte@typedsocial.com</a></p>
+                    <p><strong>Subject:</strong> [URGENT] Child Safety Report</p>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 15px;">
+                        All reports are handled with complete confidentiality.
+                    </p>
+                </div>
+                
+                <h3>3.3 Reporting to Authorities</h3>
+                <p>We also recommend reporting directly to competent authorities:</p>
+                <ul>
+                    <li><strong>USA:</strong> NCMEC CyberTipline (missingkids.org)</li>
+                    <li><strong>UK:</strong> CEOP (ceop.police.uk)</li>
+                    <li><strong>International:</strong> Local Cybercrime Police Department</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h2>4. Cooperation with Authorities</h2>
+                <p>
+                    TypeD Social fully cooperates with law enforcement and judicial authorities in 
+                    investigations related to child sexual abuse and exploitation.
+                </p>
+                
+                <div class="info-box">
+                    <h3>Our Cooperation Includes:</h3>
+                    <ul>
+                        <li>Immediate reporting of CSAM to NCMEC (National Center for Missing & Exploited Children)</li>
+                        <li>Preservation of data and evidence as required by law</li>
+                        <li>Priority response to legal requests from authorities</li>
+                        <li>Provision of account information upon court order</li>
+                        <li>Collaboration with international investigations</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>5. Consequences for Violations</h2>
+                <p>Users who violate this policy will be subject to the following consequences:</p>
+                
+                <ol>
+                    <li><strong>Immediate Removal:</strong> All content violating this policy will be removed immediately</li>
+                    <li><strong>Account Suspension:</strong> The account will be suspended instantly</li>
+                    <li><strong>Permanent Ban:</strong> The user will be permanently banned from the platform</li>
+                    <li><strong>Report to Authorities:</strong> The incident will be reported to competent authorities</li>
+                    <li><strong>Evidence Preservation:</strong> All evidence will be preserved for investigation</li>
+                </ol>
+                
+                <div class="warning-box">
+                    <h3>⚖️ Legal Liability</h3>
+                    <p>
+                        Users who share child sexual abuse material are subject to 
+                        <strong>criminal prosecution</strong> under applicable laws in their jurisdiction.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>6. Resources and Support</h2>
+                <p>
+                    If you or someone you know has been a victim of abuse or sexual exploitation, 
+                    seek help immediately:
+                </p>
+                
+                <h3>🇺🇸 United States</h3>
+                <ul>
+                    <li><strong>NCMEC:</strong> 1-800-843-5678 - National Center for Missing & Exploited Children</li>
+                    <li><strong>RAINN:</strong> 1-800-656-4673 - Rape, Abuse & Incest National Network</li>
+                </ul>
+                
+                <h3>🌍 International</h3>
+                <ul>
+                    <li><strong>NCMEC:</strong> missingkids.org - National Center for Missing & Exploited Children</li>
+                    <li><strong>INHOPE:</strong> inhope.org - International network against CSAM</li>
+                    <li><strong>IWF:</strong> iwf.org.uk - Internet Watch Foundation</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h2>7. Contact</h2>
+                <p>For questions related to this policy or to report violations:</p>
+                
+                <div class="contact-box">
+                    <h3>📬 Designated Point of Contact</h3>
+                    <p><strong>Email:</strong> <a href="mailto:suporte@typedsocial.com">suporte@typedsocial.com</a></p>
+                    <p><strong>Website:</strong> <a href="https://www.typedsocial.com">www.typedsocial.com</a></p>
+                    <p style="margin-top: 15px;">
+                        <strong>Response Time:</strong> Child safety reports are handled with 
+                        <strong>maximum priority</strong> and answered within <strong>24 hours</strong>.
+                    </p>
+                </div>
+            </div>
+            
+            <p class="last-update">
+                <strong>Last Updated:</strong> December 2024<br>
+                <strong>Version:</strong> 1.0
+            </p>
+        </div>
+    </div>
+
+    <!-- ==================== ESPAÑOL ==================== -->
+    <div id="content-es" class="lang-content">
+        <div class="header">
+            <h1>🛡️ Política de Seguridad Infantil</h1>
+            <p>TypeD Social - Estándares de Protección contra el Abuso y Explotación Sexual Infantil</p>
+        </div>
+        
+        <div class="container">
+            <div class="card">
+                <h2>1. Compromiso con la Seguridad Infantil</h2>
+                <p>
+                    <strong>TypeD Social</strong> mantiene una política de <strong>TOLERANCIA CERO</strong> 
+                    respecto a cualquier forma de abuso o explotación sexual infantil (CSAE - Child Sexual 
+                    Abuse and Exploitation).
+                </p>
+                <p>
+                    Estamos comprometidos a crear un ambiente seguro para todos los usuarios y a cooperar 
+                    activamente con las autoridades competentes para combatir los delitos contra niños y adolescentes.
+                </p>
+                
+                <div class="warning-box">
+                    <h3>⚠️ Prohibición Absoluta</h3>
+                    <p>Está <strong>estrictamente prohibido</strong> en TypeD Social cualquier contenido que:</p>
+                    <ul>
+                        <li>Represente, promueva o glorifique el abuso sexual de menores</li>
+                        <li>Contenga material de abuso sexual infantil (CSAM)</li>
+                        <li>Sexualice a menores de cualquier forma</li>
+                        <li>Facilite, promueva o coordine la explotación sexual de niños</li>
+                        <li>Solicite o comparta imágenes íntimas de menores</li>
+                        <li>Promueva el acoso o captación (grooming) de menores</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>2. Medidas de Prevención</h2>
+                <p>Implementamos las siguientes medidas para prevenir el abuso infantil en nuestra plataforma:</p>
+                
+                <h3>2.1 Moderación de Contenido</h3>
+                <ul>
+                    <li>Sistema de denuncia accesible en todas las publicaciones y perfiles</li>
+                    <li>Revisión prioritaria de denuncias relacionadas con menores</li>
+                    <li>Eliminación inmediata de contenido sospechoso</li>
+                    <li>Equipo de moderación capacitado para identificar CSAM</li>
+                </ul>
+                
+                <h3>2.2 Verificación y Monitoreo</h3>
+                <ul>
+                    <li>Monitoreo proactivo del contenido compartido</li>
+                    <li>Detección de patrones de comportamiento sospechosos</li>
+                    <li>Análisis de denuncias dentro de 24 horas</li>
+                </ul>
+                
+                <h3>2.3 Bloqueo y Prohibición</h3>
+                <ul>
+                    <li>Suspensión inmediata de cuentas que violen esta política</li>
+                    <li>Prohibición permanente sin posibilidad de apelación</li>
+                    <li>Preservación de evidencias para las autoridades</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h2>3. Procedimientos de Denuncia</h2>
+                
+                <h3>3.1 Cómo Denunciar en la Aplicación</h3>
+                <ol>
+                    <li>Toca los tres puntos (⋮) en la publicación o perfil sospechoso</li>
+                    <li>Selecciona "Denunciar"</li>
+                    <li>Elige la categoría "Abuso o Explotación Infantil"</li>
+                    <li>Proporciona detalles adicionales si es posible</li>
+                    <li>Envía la denuncia</li>
+                </ol>
+                
+                <h3>3.2 Denuncia Directa</h3>
+                <p>Para denuncias urgentes o detalladas, contáctanos directamente:</p>
+                
+                <div class="contact-box">
+                    <h3>📧 Canal de Denuncia</h3>
+                    <p><strong>Email:</strong> <a href="mailto:suporte@typedsocial.com">suporte@typedsocial.com</a></p>
+                    <p><strong>Asunto:</strong> [URGENTE] Denuncia de Seguridad Infantil</p>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 15px;">
+                        Todas las denuncias se tratan con total confidencialidad.
+                    </p>
+                </div>
+                
+                <h3>3.3 Denuncia a las Autoridades</h3>
+                <p>También recomendamos denunciar directamente a las autoridades competentes:</p>
+                <ul>
+                    <li><strong>España:</strong> Policía Nacional - Brigada de Investigación Tecnológica</li>
+                    <li><strong>México:</strong> SIPINNA o Policía Cibernética</li>
+                    <li><strong>Internacional:</strong> NCMEC CyberTipline (missingkids.org)</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h2>4. Cooperación con Autoridades</h2>
+                <p>
+                    TypeD Social coopera plenamente con las autoridades policiales y judiciales en 
+                    investigaciones relacionadas con el abuso y explotación sexual infantil.
+                </p>
+                
+                <div class="info-box">
+                    <h3>Nuestra Cooperación Incluye:</h3>
+                    <ul>
+                        <li>Reporte inmediato de CSAM al NCMEC (National Center for Missing & Exploited Children)</li>
+                        <li>Preservación de datos y evidencias según lo exigido por la ley</li>
+                        <li>Respuesta prioritaria a solicitudes legales de autoridades</li>
+                        <li>Suministro de información de cuenta mediante orden judicial</li>
+                        <li>Colaboración con investigaciones internacionales</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>5. Consecuencias por Violaciones</h2>
+                <p>Los usuarios que violen esta política estarán sujetos a las siguientes consecuencias:</p>
+                
+                <ol>
+                    <li><strong>Eliminación Inmediata:</strong> Todo contenido que viole esta política será eliminado inmediatamente</li>
+                    <li><strong>Suspensión de Cuenta:</strong> La cuenta será suspendida instantáneamente</li>
+                    <li><strong>Prohibición Permanente:</strong> El usuario será permanentemente prohibido de la plataforma</li>
+                    <li><strong>Reporte a Autoridades:</strong> El incidente será reportado a las autoridades competentes</li>
+                    <li><strong>Preservación de Evidencias:</strong> Todas las evidencias serán preservadas para investigación</li>
+                </ol>
+                
+                <div class="warning-box">
+                    <h3>⚖️ Responsabilidad Legal</h3>
+                    <p>
+                        Los usuarios que compartan material de abuso sexual infantil están sujetos a 
+                        <strong>procesos penales</strong> conforme a las leyes aplicables en su jurisdicción.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>6. Recursos y Apoyo</h2>
+                <p>
+                    Si tú o alguien que conoces ha sido víctima de abuso o explotación sexual, 
+                    busca ayuda inmediatamente:
+                </p>
+                
+                <h3>🇪🇸 España</h3>
+                <ul>
+                    <li><strong>Teléfono ANAR:</strong> 900 20 20 10 - Ayuda a Niños y Adolescentes en Riesgo</li>
+                    <li><strong>Policía Nacional:</strong> 091</li>
+                </ul>
+                
+                <h3>🌍 Internacional</h3>
+                <ul>
+                    <li><strong>NCMEC:</strong> missingkids.org - National Center for Missing & Exploited Children</li>
+                    <li><strong>INHOPE:</strong> inhope.org - Red internacional contra CSAM</li>
+                    <li><strong>IWF:</strong> iwf.org.uk - Internet Watch Foundation</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h2>7. Contacto</h2>
+                <p>Para preguntas relacionadas con esta política o para reportar violaciones:</p>
+                
+                <div class="contact-box">
+                    <h3>📬 Punto de Contacto Designado</h3>
+                    <p><strong>Email:</strong> <a href="mailto:suporte@typedsocial.com">suporte@typedsocial.com</a></p>
+                    <p><strong>Website:</strong> <a href="https://www.typedsocial.com">www.typedsocial.com</a></p>
+                    <p style="margin-top: 15px;">
+                        <strong>Tiempo de Respuesta:</strong> Las denuncias de seguridad infantil se tratan con 
+                        <strong>máxima prioridad</strong> y se responden en un plazo de <strong>24 horas</strong>.
+                    </p>
+                </div>
+            </div>
+            
+            <p class="last-update">
+                <strong>Última actualización:</strong> Diciembre 2024<br>
+                <strong>Versión:</strong> 1.0
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer (same for all languages) -->
+    <div class="footer">
+        <p><strong>TypeD Social</strong></p>
+        <p id="footer-text">Rede Social para Pessoas com Diabetes</p>
+        <p style="margin-top: 15px;">
+            <a href="https://www.typedsocial.com/privacy">Privacy Policy</a> | 
+            <a href="https://www.typedsocial.com/terms">Terms of Use</a>
+        </p>
+        <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.7;">
+            © 2024 TypeD Social. All rights reserved.
+        </p>
+    </div>
+
+    <script>
+        // Detectar idioma do navegador
+        function detectLanguage() {
+            const browserLang = navigator.language || navigator.userLanguage;
+            if (browserLang.startsWith('pt')) return 'pt';
+            if (browserLang.startsWith('es')) return 'es';
+            return 'en';
+        }
+
+        // Definir idioma
+        function setLanguage(lang) {
+            // Esconder todos os conteúdos
+            document.querySelectorAll('.lang-content').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Mostrar o conteúdo do idioma selecionado
+            document.getElementById('content-' + lang).classList.add('active');
+            
+            // Atualizar botões
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Atualizar footer
+            const footerTexts = {
+                'pt': 'Rede Social para Pessoas com Diabetes',
+                'en': 'Social Network for People with Diabetes',
+                'es': 'Red Social para Personas con Diabetes'
+            };
+            document.getElementById('footer-text').textContent = footerTexts[lang];
+            
+            // Salvar preferência
+            localStorage.setItem('preferred-language', lang);
+        }
+
+        // Inicializar
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferred-language');
+            const lang = savedLang || detectLanguage();
+            
+            // Simular clique no botão correto
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => {
+                if (btn.textContent.includes(lang.toUpperCase())) {
+                    btn.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
